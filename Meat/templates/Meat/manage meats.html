@@ -1,0 +1,44 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+{% extends 'temp/admin.html' %}
+{% block base %}
+<body>
+<div class="card p-3" style="border-radius:20px;">
+
+{#	<h2 align="center">Manage meats</h2>#}
+<form>
+<table align="center" border="2" class="table table-hover table-borderless table-striped">
+    <tr>
+			<th>Meat name</th>
+			<th>item</th>
+			<th>type</th>
+			<th>quantity</th>
+			<th>image</th>
+            <th>date</th>
+			<th>price/kg</th>
+			<th>status</th>
+		</tr>
+        {% for i in objval %}
+		<tr>
+            <td>{{ i.meat_name }}</td>
+			<td>{{ i.items }}</td>
+			<td>{{ i.type }}</td>
+			<td>{{ i.quantity }}</td>
+			<td>{{ i.image }}</td>
+			<td>{{ i.date_meat }}</td>
+			<td>{{ i.price_kg }}</td>
+			<td>{{ i.status }}</td>
+			<td><a href="{% url 'ed'  idd=i.m_id%}">UPDATE</a></td>
+			<td><a href="{% url 'dlt'  idd=i.m_id%}">DELETE</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}
