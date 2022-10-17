@@ -1,0 +1,38 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+<body>
+	<h2 align="center">Order details</h2>
+<form>
+	<table align="center" border="2">
+		<tr>
+            <th>c_id</th>
+			<th>m_id</th>
+			<th>date</th>
+			<th>delivery_date</th>
+{#			<th>quantity</th>#}
+			<th>choosen_quantity</th>
+
+		</tr>
+        {% for i in objval %}
+		<tr>
+			<td>{{ i.c.log_id }}</td>
+			<td>{{ i.m.meat_name }}</td>
+			<td>{{ i.date }}</td>
+			<td>{{ i.delivery_date }}</td>
+			<td>{{ i.choosen_quantity }}</td>
+{#			<td>{{ i.price_kg }}</td>#}
+{#			<td>{{ i.status }}</td>#}
+            <td><a href="{% url 'st' idd=i.o_id %}">status</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</form>
+</body>
+</html>
+{% endblock %}

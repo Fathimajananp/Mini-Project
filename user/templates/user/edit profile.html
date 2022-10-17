@@ -1,0 +1,52 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>Edit profile</title>#}
+{#</head>#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+<body xmlns="http://www.w3.org/1999/html">
+<div class="card p-3" style="border-radius:20px;">
+{#	<h2 align="center">Edit profile</h2>#}
+	<form>
+		<table align="center" border="2" class="table table-hover table-borderless table-striped">
+
+
+	<tr>
+		<th>House name</th>
+		<td><textarea name="adrs" class="form-control" required></textarea></td>
+	</tr>
+	<tr>
+		<th>Place</th>
+		<td><input type="text" name="place" value="{{ objval.place }}"  class="form-control" required></td>
+	</tr>
+	<tr>
+		<th>City</th>
+		<td><input type="text" name="cty" value="{{ objval.city }}"  class="form-control" required></td>
+	</tr>
+	
+	<tr>
+		<th>Pincode</th>
+		<td><input type="text" name="pin" value="{{ objval.pin_code }}"  class="form-control" required pattern="[0-9]{6}"></td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td><input type="Email" name="email" value="{{ objval.email }}"  class="form-control" required></td>
+	</tr>
+	<tr>
+		<th>Phone no</th>
+		<td><input type="text" name="phno" value="{{ objval.phone_no }}"  class="form-control" required pattern="[0-9]{10}"></td>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Edit Profile"></td>
+	</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>Booking </title>#}
+{#</head>#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+	<form method="post">
+        {% csrf_token %}
+		<table align="center" border="2">
+
+			<tr>
+				<td>Delivery_date</td>
+				<td><input type="Date" name="date"></td>
+			</tr>
+
+			<tr>
+			<td>choosen quantity</td>
+			<td><input type="text" name="qnty"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="post"></td>
+		</tr>
+		</table>
+	</form>
+
+</body>
+</html>
+
+{% endblock %}

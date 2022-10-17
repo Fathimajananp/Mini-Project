@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>payment</title>
+</head>
+<body>
+	<h2 align="center">Payment</h2>
+	<form method="post">
+        {% csrf_token %}
+		<table align="center">
+			<tr>
+			<td>date</td>
+			<td><input type="date" name="date"></td>
+		</tr>
+		<tr>
+			<td>mode of payment</td>
+			<td><input type="radio" name="pmt" value="cash on delivery">cash on delivery
+				<input type="radio" name="pmt" value="UPI">UPI</td>
+		</tr>
+		<tr>
+			<td>amount</td>
+			<td><input type="text" name="amt"></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td><input type="text" name="sts"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="pay"></td>
+		</tr>
+		</table>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>item</title>
+</head>
+<body>
+	<h2 align="center">Item Details</h2>
+	<form method="post">
+        {% csrf_token %}
+	<table align="center" border="2">
+		<tr>
+			<td>image</td>
+			<td><input type="file" name="img"></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td><input type="text" name="sts"></td>
+		</tr>
+        <tr>
+			<td></td>
+			<td><input type="submit" name="btn" value="post"></td>
+		</tr>
+	</table>
+  </form>
+</body>
+</html>

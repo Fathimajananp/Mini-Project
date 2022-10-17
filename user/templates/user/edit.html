@@ -1,0 +1,46 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+{#	<h2 align="center">Manage Edit</h2>#}
+<div class="card p-3" style="border-radius:20px;">
+	<form>
+		<table align="center" border="2" class="table table-hover table-borderless table-striped">
+			<tr>
+				<td>log_id</td>
+				<td>gender</td>
+				<td>email</td>
+				<td>house name</td>
+				<td>place</td>
+				<td>city</td>
+
+				<td>pincode</td>
+				<td>ph no</td>
+
+			</tr>
+                {% for i in objval %}
+            <tr>
+				<td>{{ i.log_id }}</td>
+				<td>{{ i.gender }}</td>
+				<td>{{ i.email }}</td>
+				<td>{{ i.house_name }}</td>
+				<td>{{ i.place }}</td>
+				<td>{{ i.city }}</td>
+				<td>{{ i.pin_code }}</td>
+				<td>{{ i.phone_no }}</td>
+				<td><a href="{% url 'update' idd=i.c_id %}">update</a></td>
+				<td><a href="{% url 'delet' idd=i.c_id %}">delete</a></td>
+			</tr>
+            {% endfor %}
+		</table>
+	</form>
+</div>
+</body>
+</html>
+
+{% endblock %}

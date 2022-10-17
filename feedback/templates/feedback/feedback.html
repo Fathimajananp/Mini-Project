@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 align="center">Feedback</h2>
+	<form method="post">
+        {% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>Feedback</td>
+				<td><input type="text" name="Feedback"></td>
+			</tr>
+			<tr>
+				<td>Date</td>
+				<td><input type="Date" name="dte"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" name="btn" value="post"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

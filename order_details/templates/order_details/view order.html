@@ -1,0 +1,38 @@
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title></title>#}
+{#</head>#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+<body>
+	<h2 align="center">Order details</h2>
+<form>
+	<table align="center" border="2">
+		<tr>
+			<th>Meat name</th>
+			<th>item</th>
+			<th>type</th>
+			<th>quantity</th>
+			<th>image</th>
+			<th>price/kg</th>
+			<th>status</th>
+		</tr>
+        {% for i in objval %}
+		<tr>
+			<td>{{ i.meat_name }}</td>
+			<td>{{ i.items }}</td>
+			<td>{{ i.type }}</td>
+			<td>{{ i.quantity }}</td>
+			<td>{{ i.image }}</td>
+			<td>{{ i.price_kg }}</td>
+			<td>{{ i.status }}</td>
+            <td><a href="/order_details/booking/{{ i.m_id }}">Order</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+</form>
+</body>
+</html>
+{% endblock %}
